@@ -72,7 +72,8 @@
 provider "aws" {
   region = "sa-east-1"
 }
-resource "aws_instance" "web" {
+resource "aws_instance" "web2" {
+  count = 3
   subnet_id     = "subnet-0cde2b21259997493"
   ami= "ami-054a31f1b3bf90920"
   instance_type = "t2.small"
@@ -84,15 +85,9 @@ resource "aws_instance" "web" {
     volume_size = 8
   }
   tags = {
-    Name = "Erico-EC21-tf"
+    Name = "Erico-EC2-tf-${(count.index+1)}"
   }
 }
 
 
-
-# https://www.terraform.io/docs/language/values/outputs.html
-output "instance_public_dns" {
-  value = [aws_instance.web.public_dns,aws_instance.web.public_ip, aws_instance.web.private_ip]
-  description = "Mostra o DNS e os IPs publicos e privados da maquina criada."
-}
 # /////
