@@ -62,4 +62,5 @@ resource "aws_security_group" "allow_http_ssh" {
   tags = {
     Name = "Erico-allow_ssh-TF"
   }
+
 }
