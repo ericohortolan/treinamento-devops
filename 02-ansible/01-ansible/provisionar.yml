@@ -49,6 +49,7 @@
         dest: "/tmp/wordpress.tar.gz"
     
     - name: "Fazendo descompactação dos arquivos do WP"
+      become: yes
       unarchive:
         src: "/tmp/wordpress.tar.gz"
         dest: "/var/www"
