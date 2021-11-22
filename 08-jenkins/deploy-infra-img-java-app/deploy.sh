@@ -1,6 +1,7 @@
 #!/bin/bash
-ls -la
+
 cd 08-jenkins/deploy-infra-img-java-app/terraform
+ls -la
 terraform init
 terraform apply -auto-approve
 
