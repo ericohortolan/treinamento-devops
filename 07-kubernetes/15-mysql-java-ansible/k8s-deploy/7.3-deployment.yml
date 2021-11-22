@@ -43,5 +43,5 @@ spec:
       app: pod-javadb
 
 
-# $ kubectl logs -l app=lable-pod-java # log de todos os lables do replicaset
+# $ kubectl logs -l app=pod-javadb # log de todos os lables do replicaset
 # $ kubectl logs --tail=20 --follow=true -l app=lable-pod-java
